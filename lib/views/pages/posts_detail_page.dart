@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../models/post.dart';
-import '../../view_model/posts_bloc.dart';
-import '../../view_model/posts_event.dart';
-import '../../view_model/posts_state.dart';
+import '../../view_models/posts_bloc.dart';
+import '../../view_models/posts_event.dart';
+import '../../view_models/posts_state.dart';
 
 class PostsDetailPage extends StatelessWidget {
   final Post post;

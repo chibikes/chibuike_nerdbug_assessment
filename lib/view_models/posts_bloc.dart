@@ -1,10 +1,9 @@
 import 'package:bloc/bloc.dart';
-import 'package:chibuike_nerdbug_assessment/post_repository/post_repository.dart';
-import 'package:chibuike_nerdbug_assessment/view_model/posts_event.dart';
-import 'package:chibuike_nerdbug_assessment/view_model/posts_state.dart';
-
+import 'package:chibuike_nerdbug_assessment/view_models/posts_event.dart';
+import 'package:chibuike_nerdbug_assessment/view_models/posts_state.dart';
 import '../models/like_status.dart';
 import '../models/loading_status.dart';
+import '../repositories/post_repository/post_repository.dart';
 
 class PostsBloc extends Bloc<PostsEvent, PostsState> {
   final PostRepository _postRepository;
