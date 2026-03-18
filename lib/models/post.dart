@@ -1,11 +1,13 @@
-class Post {
+import 'package:equatable/equatable.dart';
+
+class Post extends Equatable {
   final String id;
   final String userId;
   final String title;
   final String body;
-  bool isLiked;
+  final bool isLiked;
 
-  Post({
+  const Post({
     required this.id,
     required this.userId,
     required this.title,
@@ -25,6 +27,7 @@ class Post {
       userId: userId ?? this.userId,
       title: title ?? this.title,
       body: body ?? this.body,
+      isLiked: isLiked ?? this.isLiked,
     );
   }
 
@@ -41,4 +44,7 @@ class Post {
     'title': title,
     'body': body,
   };
+
+  @override
+  List<Object?> get props => [id, userId, title, body, isLiked];
 }
