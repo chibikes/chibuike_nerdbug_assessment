@@ -12,10 +12,10 @@ details and mark posts as favourites.
 
 ## Architecture
 
-The app follows a clean layered architecture:
+The app follows the MVVM pattern with BLoC for state management:
 
-- **Presentation** – Flutter widgets (`PostsPage`, `PostsDetailPage`, `PostCard`)
-- **State Management** – BLoC pattern via `flutter_bloc`
+- **View** – Flutter widgets (`PostsPage`, `PostsDetailPage`, `PostCard`)
+- **ViewModel** – BLoC pattern via `flutter_bloc` (`PostsBloc`, `PostsState`, `PostsEvent`)
 - **Repository** – `PostRepository` abstract class with `ApiPostRepository` implementation
 - **Network** – `ApiClient` generic HTTP wrapper handling all requests
 
@@ -59,10 +59,12 @@ lib/
 ├── models/
 │   ├── post.dart                 # Post model with Equatable
 │   ├── loading_status.dart       # Loading state enum
-├── post_repository/
-│   ├── post_repository.dart      # Abstract repository
-│   └── api_post_repository.dart  # API implementation
-├── view_model/
+│   └── like_status.dart          # Like state enum
+├── repositories/
+│   └── post_repository/
+│       ├── post_repository.dart      # Abstract repository
+│       └── api_post_repository.dart  # API implementation
+├── view_models/
 │   ├── posts_bloc.dart
 │   ├── posts_event.dart
 │   └── posts_state.dart
