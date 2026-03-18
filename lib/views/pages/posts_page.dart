@@ -12,6 +12,7 @@ class PostsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: const Text('Nerdbug Posts')),
       body: BlocConsumer<PostsBloc, PostsState>(
         builder: (context, state) {
           if (state.loadingStatus.loading) {
