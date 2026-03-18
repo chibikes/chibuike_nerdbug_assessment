@@ -1,6 +1,6 @@
-import 'package:chibuike_nerdbug_assessment/post_repository/api_post_repository.dart';
-import 'package:chibuike_nerdbug_assessment/view_model/posts_bloc.dart';
-import 'package:chibuike_nerdbug_assessment/view_model/posts_event.dart';
+import 'package:chibuike_nerdbug_assessment/repositories/post_repository/api_post_repository.dart';
+import 'package:chibuike_nerdbug_assessment/view_models/posts_bloc.dart';
+import 'package:chibuike_nerdbug_assessment/view_models/posts_event.dart';
 import 'package:chibuike_nerdbug_assessment/views/pages/posts_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
