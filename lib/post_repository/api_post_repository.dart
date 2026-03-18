@@ -1,23 +1,19 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:chibuike_nerdbug_assessment/post_repository/post_repository.dart';
+import '../api_client.dart';
 import '../models/post.dart';
 
 class ApiPostRepository extends PostRepository {
-  static const String _baseUrl = 'https://jsonplaceholder.typicode.com';
+  final ApiClient _apiClient;
+
+  ApiPostRepository({required ApiClient apiClient}) : _apiClient = apiClient;
 
   @override
-  Future<List<Post>> getPosts() async {
-    final response = await http.get(
-      Uri.parse('$_baseUrl/posts'),
-      headers: {'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'},
+  Future<List<Post>> getPosts() {
+    return _apiClient.get(
+      '/posts',
+      mapper: (json) => (json as List).map((e) => Post.fromJson(e)).toList(),
     );
-
-    if (response.statusCode == 200) {
-      final List<dynamic> json = jsonDecode(response.body);
-      return json.map((e) => Post.fromJson(e)).toList();
-    } else {
-      throw Exception('Failed to fetch posts — status ${response.statusCode}');
-    }
   }
 }
