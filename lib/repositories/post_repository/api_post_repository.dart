@@ -1,8 +1,9 @@
 import 'dart:convert';
+import 'package:chibuike_nerdbug_assessment/repositories/post_repository/post_repository.dart';
 import 'package:http/http.dart' as http;
-import 'package:chibuike_nerdbug_assessment/post_repository/post_repository.dart';
-import '../api_client.dart';
-import '../models/post.dart';
+
+import '../../api_client.dart';
+import '../../models/post.dart';
 
 class ApiPostRepository extends PostRepository {
   final ApiClient _apiClient;
